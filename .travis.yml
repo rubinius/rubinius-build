@@ -1,0 +1,39 @@
+language: cpp
+sudo: required
+compiler:
+- clang
+os:
+- linux
+ruby: 2.2.0
+before_install:
+- echo $LANG
+- echo $LC_ALL
+- sudo apt-get update
+- sudo apt-get install -y clang-3.4 llvm-3.4-dev libedit-dev
+- gem update --system
+- gem --version
+before_script:
+- travis_retry bundle
+- curl -O $RELEASE_URL/$RUBINIUS_TAR
+- tar -xjf $RUBINIUS_TAR
+script: cd rubinius-$RUBINIUS_VERSION && ./configure && ./scripts/deploy.sh linux
+branches:
+  only:
+  - master
+notifications:
+  email: false
+  webhooks:
+    urls:
+    - https://webhooks.gitter.im/e/9502afd22ca6c8e85fb3
+    on_success: change
+    on_failure: always
+    on_start: always
+env:
+  global:
+  - RELEASE_URL=https://rubinius-releases-rubinius-com.s3.amazonaws.com
+  - RUBINIUS_VERSION=3.15
+  - RUBINIUS_TAR=rubinius-$RUBINIUS_VERSION.tar.bz2
+  - LANG="en_US.UTF-8"
+  - secure: olbok/GN6rOYvPnHBYWGz7giCoCdLFpT/7WSBHukYO3E0uNeqAUOOgW2BFOwCVWdSEJ/iTvJXZQ4qVZHX+6jRfvILZeGv+D2P93VdD8UFQRoTOfFC7esAo525s9fuKm9ehUGWZxlzGOBHHckky1jn6pEf8mlXAVM5e76dlH0fck=
+  - secure: aqG9eB/PrzQ7XJQN6YX/00sNVvwSB77saxXQzguL2WFjAXB74h6168Hzq+awHtNX/vfOb6ta7fpWLHrA0D+gmZnvTR29VlP6nd0vs1tkdX1/jWbiBHjamRffp+NWVdKbJKYn5iLOGXcuUMOzY/opLKOdvxKZfkxGMxR2tTNLZUE=
+  - secure: eElvNLjuFZAuixJdgom4Kv8RDziE4ArFcSEwYctvprMe/414CAaJcFkjQKg0RrJzAxZ51oGjdcZhEfmjNXcUU1gA5l++IdnlQm0x4kt8r7aql+q2geHzrrjhhwPujT9a8JNtXs6dHnbi+quNlxyVItWzeGJsjyhJzH8hxiFhCYI=
