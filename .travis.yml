@@ -13,7 +13,7 @@ before_install:
 before_script:
 - curl -O $RELEASE_URL/$RUBINIUS_TAR
 - tar -xjf $RUBINIUS_TAR
-script: cd rubinius-$RUBINIUS_VERSION && bundle && ./configure && ./scripts/deploy.sh linux
+script: cd rubinius-$RUBINIUS_VERSION && bundle && ./configure && ./scripts/deploy.sh travis
 branches:
   only:
   - master
