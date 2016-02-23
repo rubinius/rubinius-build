@@ -13,7 +13,8 @@ before_install:
 before_script:
 - curl -O $RELEASE_URL/$RUBINIUS_TAR
 - tar -xjf $RUBINIUS_TAR
-script: cd rubinius-$RUBINIUS_VERSION && bundle && ./configure && ./scripts/deploy.sh travis
+- cd $RUBINIUS_DIR && git apply ../patches/001.patch
+script: cd $RUBINIUS_DIR && bundle && ./configure && ./scripts/deploy.sh travis
 branches:
   only:
   - master
@@ -29,6 +30,7 @@ env:
   global:
   - RELEASE_URL=https://rubinius-releases-rubinius-com.s3.amazonaws.com
   - RUBINIUS_VERSION=3.15
+  - RUBINIUS_DIR=rubinius-$RUBINIUS_VERSION
   - RUBINIUS_TAR=rubinius-$RUBINIUS_VERSION.tar.bz2
   - LANG="en_US.UTF-8"
   - secure: psuqNqOzR6A4owyO4KGKLazbuYCvQzOM5c9mx+VHySvdFBCxlxTkubkJKahxN2iy9YAvGN1uF3aeKvvqMIwnMZnmLhnsqASMfXQcVHi5sAwVs2vr5/Ve9XNE7cE60TcvWPCmSsolI6l4bnlu7y1hnTUod2VeAXFsvE0acPE3n9WcohbqMcC2MaesGFpzhc39brhVOVs5XsMBKsHzUx7U6pdBy7RmiSoJm8RGQ8piAYP714uwU2+K6J6Joeg+plnNUEi6PqR8e9R4JMy6eSsvjtJ/FX6W5GRbT1bj3DnCGt6SfU5W+99xKv9IW2vbfdszgyqPaMRP4S/E6b+9hhO0qQ36aRKAVNM7EF5BFR0R0GoRzwR622USKGBonUGSvD+bcqIL40Nmvx0gzTotke0J0dkdCCYdGVUPM8c2igkvxgZmpPzxtfcF3TUHJ9a47tPDG6dQPXQB/Xd09pw0cHl4xdIwGJxTqRZI9ze9uJU+iYaFersbzft0PxL+xL3F6ZrYHrBITAQTbS1m0hCMJE9NTpbCQ9FXQXEaz+e3bHyCnMVfR3pk5T3GWegP701l317vHRus9covdwQYCL/RM7MIjwNfLD3CYCfP/xB3hsbldMU6yqpPyMZlYBfGhAKj84ZJ5zZPCDPQtVxeTEaTE//enrkyA+Xx0t/bh0rARo5DLig=
