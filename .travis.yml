@@ -20,7 +20,10 @@ script:
 - ./scripts/deploy.sh travis docker
 branches:
   only:
-  - master
+  - homebrew
+  - travis-osx
+  - travis-12.04
+  - travis-14.04
 notifications:
   email: false
   webhooks:
