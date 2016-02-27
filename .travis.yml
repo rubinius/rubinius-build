@@ -15,6 +15,7 @@ before_script:
 - curl -O $RELEASE_URL/$RUBINIUS_TAR
 - tar -xjf $RUBINIUS_TAR
 - cd $RUBINIUS_DIR
+- git apply ../patches/001.patch
 script:
 - bundle
 - ./configure
