@@ -18,7 +18,7 @@ before_script:
 script:
 - bundle
 - ./configure
-- ./scripts/deploy.sh homebrew-release
+- ./scripts/deploy.sh homebrew-binary homebrew-release
 branches:
   only:
   - homebrew
