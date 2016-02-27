@@ -3,13 +3,14 @@ sudo: required
 compiler:
 - clang
 os:
-- linux
+- osx
 ruby: 2.2.0
 before_install:
 - echo $LANG
 - echo $LC_ALL
-- sudo apt-get update
-- sudo apt-get install -y clang-3.4 llvm-3.4-dev libedit-dev
+- brew update
+- brew install llvm35
+- brew link --force llvm35
 before_script:
 - curl -O $RELEASE_URL/$RUBINIUS_TAR
 - tar -xjf $RUBINIUS_TAR
@@ -17,12 +18,13 @@ before_script:
 script:
 - bundle
 - ./configure
-- ./scripts/deploy.sh travis docker
+- ./scripts/deploy.sh homebrew-release
 branches:
   only:
-  - osx
-  - ubuntu-12.04
-  - ubuntu-14.04
+  - homebrew
+  - travis-osx
+  - travis-12.04
+  - travis-14.04
 notifications:
   email: false
   webhooks:
@@ -34,7 +36,7 @@ notifications:
 env:
   global:
   - RELEASE_URL=https://rubinius-releases-rubinius-com.s3.amazonaws.com
-  - RUBINIUS_VERSION=3.16
+  - RUBINIUS_VERSION=3.17
   - RUBINIUS_DIR=rubinius-$RUBINIUS_VERSION
   - RUBINIUS_TAR=rubinius-$RUBINIUS_VERSION.tar.bz2
   - LANG="en_US.UTF-8"
