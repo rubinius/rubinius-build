@@ -18,9 +18,10 @@ before_script:
 script:
 - bundle
 - ./configure
-- ./scripts/deploy.sh homebrew-binary homebrew-release
+- ./scripts/deploy.sh travis
 branches:
   only:
+  - heroku
   - homebrew
   - travis-osx
   - travis-12.04
