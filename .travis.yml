@@ -20,6 +20,7 @@ script:
 - ./scripts/deploy.sh travis docker
 branches:
   only:
+  - heroku
   - homebrew
   - travis-osx
   - travis-12.04
