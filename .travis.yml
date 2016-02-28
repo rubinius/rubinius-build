@@ -18,7 +18,7 @@ before_script:
 script:
 - bundle
 - ./configure
-- ./scripts/deploy.sh travis
+- ./scripts/deploy.sh docker travis
 branches:
   only:
   - heroku
