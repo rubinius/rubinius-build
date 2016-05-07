@@ -9,7 +9,7 @@ before_install:
 - echo $LANG
 - echo $LC_ALL
 - sudo apt-get update
-- sudo apt-get install -y clang-3.4 llvm-3.4-dev libedit-dev
+- sudo apt-get install -y clang-3.6 llvm-3.6-dev libedit-dev
 before_script:
 - curl -O $RELEASE_URL/$RUBINIUS_TAR
 - tar -xjf $RUBINIUS_TAR
