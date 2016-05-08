@@ -23,7 +23,6 @@ branches:
   only:
   - homebrew
   - travis-osx
-  - travis-12.04
   - travis-14.04
 notifications:
   email: false
