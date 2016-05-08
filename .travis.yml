@@ -18,7 +18,7 @@ before_script:
 script:
 - bundle
 - ./configure --llvm-config $(brew --prefix llvm36)/bin/llvm-config-3.6
-- ./scripts/deploy.sh homebrew
+- RBX_BINARY_CONFIG="$(brew --prefix llvm36)/bin/llvm-config-3.6" ./scripts/deploy.sh homebrew
 branches:
   only:
   - homebrew
