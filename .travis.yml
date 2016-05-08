@@ -11,20 +11,22 @@ before_install:
 - echo $LC_ALL
 - sudo apt-get update
 - sudo apt-get install -y clang-3.6 llvm-3.6-dev libedit-dev
+- mkdir -p build/bin
+- ln -sf `which llvm-config-3.6` `pwd`/build/bin/llvm-config
+- export PATH=`pwd`/build/bin:$PATH
 before_script:
 - curl -O $RELEASE_URL/$RUBINIUS_TAR
 - tar -xjf $RUBINIUS_TAR
 - cd $RUBINIUS_DIR
 script:
 - bundle
-- ./configure --llvm-config llvm-config-3.6
+- ./configure
 - ./scripts/deploy.sh heroku
 branches:
   only:
   - heroku
   - homebrew
   - travis-osx
-  - travis-12.04
   - travis-14.04
 notifications:
   email: false
