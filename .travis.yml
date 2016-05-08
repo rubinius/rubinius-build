@@ -9,16 +9,15 @@ before_install:
 - echo $LANG
 - echo $LC_ALL
 - brew update
-- brew install llvm36
-- brew link --force llvm36
+- brew install llvm
 before_script:
 - curl -O $RELEASE_URL/$RUBINIUS_TAR
 - tar -xjf $RUBINIUS_TAR
 - cd $RUBINIUS_DIR
 script:
 - bundle
-- ./configure --llvm-config $(brew --prefix llvm36)/bin/llvm-config-3.6
-- RBX_BINARY_CONFIG="$(brew --prefix llvm36)/bin/llvm-config-3.6" ./scripts/deploy.sh homebrew
+- ./configure
+- ./scripts/deploy.sh homebrew
 branches:
   only:
   - homebrew
