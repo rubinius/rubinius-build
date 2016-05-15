@@ -16,8 +16,8 @@ before_script:
 - cd $RUBINIUS_DIR
 script:
 - bundle
-- ./configure
-- ./scripts/deploy.sh homebrew
+- "./configure"
+- "./scripts/deploy.sh homebrew"
 branches:
   only:
   - homebrew
@@ -27,7 +27,7 @@ notifications:
   email: false
   webhooks:
     urls:
-    - https://webhooks.gitter.im/e/9502afd22ca6c8e85fb3
+      secure: g+p3B/AlSunxyHQ4+B0hyD20OYNvwf8yy00QnImbD33Nf5a1zm/ID7x0QlDnFaXg1DjNxINgHRirG9g1nm/CfBnUhHADeHlheQov0GNoXuCyIDuHk/3P1jLfDUvCPQkRmsG+QwGLmazLJ28yD1D90YDCyIe+Wxgv1j53LjEkBQCcoo3Axc9HF/pJG4aT4Q9ofz0ySuM1K3iFUX69Uo3dw28pX6OiuOF1ahQuvyYZWJSr3RBOzG6HrOQgdKHbonUX5DheEYXznRW3DPeqtXFriu56Xmwbb4ripelQ9PEEXWjbTeD9sz0gk01lzdcUx/2Q/PK7H7z467gnyWDxEipHIMFLseM95Iv9EjVLMJdCKdqaTxZRq8LZ8CvyU+Z/H/pVHoGrY5FepOuGZNdURMabLadpoaCrJcLa2PHYAaysQLjjqO/lutp4h5CImzDK7eWLjH67J2WI9KN3rlevEwJoXBCGRep2r5myCzfsZFdh2aberGjQK0Tbacs6sKFdVR4CLjuLFEDIdtxn8RT9aTaaJ3sHeM+LuXqCuaUI1XDX21rMQybuzW1Vli5/0ob1Om4FpjfiswEjXq/J+C8gz21ryUTvu1uWiXKlMakAudclmobRmd/2PsFlBYxmfF7zdDlrbwSDvqpyKtHDGGylD94QLWgQeQW/U6+h0dbSF1vyBdA=
     on_success: change
     on_failure: always
     on_start: always
