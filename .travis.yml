@@ -16,8 +16,8 @@ before_script:
 - cd $RUBINIUS_DIR
 script:
 - bundle
-- ./configure
-- ./scripts/deploy.sh travis
+- "./configure"
+- "./scripts/deploy.sh travis"
 branches:
   only:
   - heroku
@@ -28,7 +28,7 @@ notifications:
   email: false
   webhooks:
     urls:
-    - https://webhooks.gitter.im/e/9502afd22ca6c8e85fb3
+      secure: fxeV9V3sWjyVLIukqdyZ1ACIOOGx+jRjG0m58w6JDdzraLdGgKlX5Ocg5Nsq2MX6HnjOY+Kwb1ZYSZUXFpWvCeuQHzjFT14tTqmrdfprGzQ7UUebQeJbb6nbQJLFEP46c5otCcqKUNuRTjxXwqZuGtwb3Rh4+43RgFM1PZQrA8Jt97rIwqUH5mmDKGT9iX4clLwATLoiDn1nirbEW+yxzYf6BBWFL5iSe6w5q25SslxtUAdqmVQs8Hu19DiZZVHeY8nrZZq4VwfCNwoo0B6rW2jSmDuKNWiSWcdoSmHLelpGB+okdWrMnzsq/3ci8FKg+bHp/Vew9PpyT09jshaR3j0xy8Mw5NqwlJHFHlofp+EhNU6otz7e+7bAZaHYynAli0mAq/81+9nbII5fCPZqtp1XcitN+FIvOWHaAme4OCiAxJeO2BgYqsU1oba1b8SsADen68stj/02eakE4GuODmUH1x4cJ9lkHkoRhPIOwIgRQP4/zIP1X6XH3QO6oMHuaprzHsmZ5YSto4x1ewIJkBFeEYntwQwaipqlGjvaXmyEgq+nwASlOwlqyzm66b3nuVcNmbHnNc+MYHzsNa7GUj96Gv39FDepUQR8I0+9p0sPcyR/EqNeqkIcmwEx5w0zXHpE7i9gG1E+eO19qgdM7+zNun3yVJP6ZRlWG0h5WkQ=
     on_success: change
     on_failure: always
     on_start: always
