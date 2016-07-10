@@ -39,7 +39,7 @@ notifications:
 env:
   global:
   - RELEASE_URL=https://rubinius-releases-rubinius-com.s3.amazonaws.com
-  - RUBINIUS_VERSION=3.43
+  - RUBINIUS_VERSION=3.44
   - RUBINIUS_DIR=rubinius-$RUBINIUS_VERSION
   - RUBINIUS_TAR=rubinius-$RUBINIUS_VERSION.tar.bz2
   - LANG="en_US.UTF-8"
