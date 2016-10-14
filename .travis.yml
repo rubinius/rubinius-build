@@ -12,7 +12,9 @@ before_install:
 - sudo apt-get update
 - sudo apt-get install -y clang-3.8 llvm-3.8-dev libedit-dev
 - mkdir -p build/bin
-- ln -sf `which llvm-config-3.6` `pwd`/build/bin/llvm-config
+- ln -sf `which llvm-config-3.8` `pwd`/build/bin/llvm-config
+- ln -sf `which clang-3.8` `pwd`/build/bin/clang
+- ln -sf `which clang++-3.8` `pwd`/build/bin/clang++
 - export PATH=`pwd`/build/bin:$PATH
 before_script:
 - curl -O $RELEASE_URL/$RUBINIUS_TAR
