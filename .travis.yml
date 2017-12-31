@@ -15,7 +15,6 @@ before_script:
 - tar -xjf $RUBINIUS_TAR
 - cd $RUBINIUS_DIR
 script:
-- bundle
 - "./configure"
 - "./scripts/deploy.sh travis docker"
 branches:
