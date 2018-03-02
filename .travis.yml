@@ -10,7 +10,7 @@ before_install:
 - echo $LANG
 - echo $LC_ALL
 - sudo apt-get update
-- sudo apt-get install -y libc++-dev libc++abi-dev bsdtar libedit-dev
+- sudo apt-get install -y clang-3.8 llvm-3.8-dev libc++-dev libc++abi-dev bsdtar libedit-dev
 - mkdir -p build/bin
 - export PATH=`pwd`/build/bin:$PATH
 before_script:
