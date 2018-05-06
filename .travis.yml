@@ -9,13 +9,13 @@ before_install:
 - echo $LANG
 - echo $LC_ALL
 - brew update
-- brew install llvm@5
+- brew install llvm
 before_script:
 - curl -O $RELEASE_URL/$RUBINIUS_TAR
 - tar -xjf $RUBINIUS_TAR
 - cd $RUBINIUS_DIR
 script:
-- "./configure --with-include-dir=$OPENSSL_DIR/include --with-lib-dir=$OPENSSL_DIR/lib --llvm-config=llvm-config-5.0 --cc=clang-5.0 --cxx=clang++-5.0"
+- "./configure --with-include-dir=$OPENSSL_DIR/include --with-lib-dir=$OPENSSL_DIR/lib"
 - "./scripts/deploy.sh travis"
 branches:
   only:
