@@ -24,6 +24,7 @@ branches:
   - travis-osx
   - travis-12.04
   - travis-14.04
+  - travis-16.04
 notifications:
   email: false
   webhooks:
