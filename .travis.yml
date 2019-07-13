@@ -1,5 +1,5 @@
 language: cpp
-dist: trusty
+dist: xenial
 sudo: required
 compiler:
 - clang
@@ -26,6 +26,7 @@ branches:
   - homebrew
   - travis-osx
   - travis-14.04
+  - travis-16.04
 notifications:
   email: false
   webhooks:
